@@ -1,7 +1,10 @@
-export default function Tabs({ children, buttons }) {
+export default function Tabs({ children, buttons, buttonsContainer }) {
+    // depending on the value passed (ex. "menu" or custom componenet), it will load appropriately
+    const ButtonsContainer = buttonsContainer;
+    
     return (
         <>
-            <menu>{buttons}</menu>
+            <ButtonsContainer>{buttons}</ButtonsContainer>
             {children}
         </>
     )

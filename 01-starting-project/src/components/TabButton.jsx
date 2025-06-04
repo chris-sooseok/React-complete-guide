@@ -3,7 +3,7 @@ export default function TabButton({ children, isSelected, ...props}) {
   // document.querySelector('button').addEventListener('click', () => {})
 
   return (
-    <li>
+    <li> 
       <button className={isSelected ? "active" : undefined} {...props}>
         {children}
       </button>
