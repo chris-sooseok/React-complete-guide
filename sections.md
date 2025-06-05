@@ -35,3 +35,15 @@ styled-components package:
 
 Tailwind CSS
 - npm install tailwindcss @tailwindcss/vite
+
+
+# Section 7: debugging
+Browser Sources Tab:
+- can create a breakpoint on browser
+
+Strict Mode component
+- provided by react package
+- executes every component twice during development phase
+
+Browser Developer Extension
+- show structures of and details on components such as which functions and props are being used
