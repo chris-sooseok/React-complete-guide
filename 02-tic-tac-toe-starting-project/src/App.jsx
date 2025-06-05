@@ -62,6 +62,7 @@ function deriveWinner(gameBoard, players) {
 }
 
 function App() {
+  // used to display player names
   const [players, setPlayers] = useState(PLAYERS);
   // used to update GameBoard
   const [gameTurns, setGameTurns] = useState([]);
