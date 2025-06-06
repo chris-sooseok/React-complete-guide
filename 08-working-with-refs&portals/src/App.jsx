@@ -4,7 +4,10 @@ import TimerChallenge from './components/TimerChallenge.jsx';
 function App() {
   return (
     <>
+      {/* ? response for displaying player name */}
       <Player />
+
+      {/* each challenge is displayed */}
       <div id="challenges">
         <TimerChallenge title="Easy" targetTime={1} />
         <TimerChallenge title="Medium" targetTime={5} />

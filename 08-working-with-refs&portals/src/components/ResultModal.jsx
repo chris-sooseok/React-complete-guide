@@ -14,6 +14,8 @@ export default function ResultModal({
 
   const score = Math.round((1 - timeRemaining / (targetTime * 1000)) * 100);
 
+  // this allows someone calling ref.current.open() from outside to open the modal
+  // useImperativeHandle customizes what custom methods .current exposes
   useImperativeHandle(ref, () => {
     return {
       open() {
@@ -33,7 +35,7 @@ export default function ResultModal({
         You stopped the timer with <string> {formattedTimeRemaining} seconds left</string>
       </p>
 
-      {/* built-in html feature that closes dialog */}
+      {/* setting method dialog and placing the form inside dialog element will close dialog when submitted */}
       <form method="dialog" onSubmit={onReset}>
         <button>Close</button>
       </form>

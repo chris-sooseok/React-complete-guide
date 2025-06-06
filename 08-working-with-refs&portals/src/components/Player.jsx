@@ -2,7 +2,7 @@ import { useRef } from "react";
 
 export default function Player() {
 
-  // ref can hold a mutable value that does not cause re-renders
+  // ref allows direct access to DOM element that changes don't cause re-render
   const playerName = useRef();
   const [enteredPlayerName, setEnteredPlayerName] = useState("");
 
