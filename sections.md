@@ -47,3 +47,14 @@ Strict Mode component
 
 Browser Developer Extension
 - show structures of and details on components such as which functions and props are being used
+
+# Section 8: working with refs & portals
+Refs
+- doesn't re-evaluate components
+- can be used to gain direct DOM element access (-> great for reading values or accessing certain browser APIs)
+- ref is a way to access a DOM node or React element instance directly
+
+
+State
+- causes component reevaluation
+- should be used for values that are directly reflected in the UI
