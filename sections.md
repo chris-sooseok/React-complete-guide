@@ -58,3 +58,15 @@ Refs
 State
 - causes component reevaluation
 - should be used for values that are directly reflected in the UI
+
+# Section 10: advanced state management
+ Component Composition
+ - prevents props drilling by upbringing component up to higher position to prevent descending props
+ 
+ API Context 
+ 
+ 
+ Reducer
+ - a function that reduces one or more complex values to a simpler one
+ 
+ 
