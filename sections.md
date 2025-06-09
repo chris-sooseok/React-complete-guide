@@ -72,3 +72,10 @@ State
  - in combination with context, it can provides simplicity and structure of functions to work with context value
  
  
+# Section 11: Handling side effects
+useEffect
+- prevents infinite loop of component rendering
+- controls execution of specific state data
+
+useCallback
+- prevents recreation of objects such as functions
