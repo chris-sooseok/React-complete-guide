@@ -1,16 +1,10 @@
 import { createContext, useState, useReducer } from "react";
 import { DUMMY_PRODUCTS } from "../dummy-products.js";
 
-export const CartContext = createContext({
-  // used to provide auto-completion in IDEs
-  // will have to pass the actual value when using the context
-  items: [],
-  addItemToCart: () => {},
-  updateItemQuantity: () => {},
-});
-
 function shoppingCartReducer(state, action) {
-
+    // ? reducer functions used on CartContext
+    // ? action is used to define behavior
+    // ? state contains data
     if (action.type === 'ADD_ITEM') {
       const updatedItems = [...state.items];
       const existingCartItemIndex = updatedItems.findIndex(
@@ -62,18 +56,24 @@ function shoppingCartReducer(state, action) {
       };
     }
 
-
   return state;
 }
 
+export const CartContext = createContext({
+  // skeletons of context
+  items: [],
+  addItemToCart: () => {},
+  updateItemQuantity: () => {},
+});
+
 export default function CartContextProvider({ children }) {
+
   const [shoppingCartState, shoppingCartDispatch] = useReducer(
     shoppingCartReducer,
     {
       items: [],
     }
   );
-
 
   function handleAddItemToCart(id) {
     shoppingCartDispatch({
@@ -92,7 +92,7 @@ export default function CartContextProvider({ children }) {
     })
   }
 
-  // Context value to be provided to components
+  // This is cart context packapge which will be used by all other components
   const ctxValue = {
     items: shoppingCartState.items,
     addItemToCart: handleAddItemToCart,

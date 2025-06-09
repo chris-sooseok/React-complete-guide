@@ -64,9 +64,11 @@ State
  - prevents props drilling by upbringing component up to higher position to prevent descending props
  
  API Context 
- 
+ - state management aboard components
+ - provides accessibility to the state and functions through context
  
  Reducer
  - a function that reduces one or more complex values to a simpler one
+ - in combination with context, it can provides simplicity and structure of functions to work with context value
  
  
