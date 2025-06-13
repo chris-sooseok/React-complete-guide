@@ -97,3 +97,8 @@ useCallback - when some functions are passed as props to a component, this will 
 state batching: state changes of same value within the same function will only trigger the component to render once
 
 million.js: react optimize package by just configuring into any react project
+
+# Section 14: class-based components
+
+- hooks (useEffect, useState)
+- context 
