@@ -79,3 +79,21 @@ useEffect
 
 useCallback
 - prevents recreation of objects such as functions
+
+# Section 13: Optimization techniques 
+memo - compare prop values and only re-render when the value has changed
+- don't use it on components where props will change frequently
+- use it as high ip in the component tree as possible 
+useMemo - can prevent execution of function when rendering a component
+
+useCallback - when some functions are passed as props to a component, this will preventing passing new functon object everytime when components are rendered
+
+## DOM update process
+1 : creating a component tree (partial tree)
+2 : creating a virtual snapshot of the target HTML code
+3 : compares old snapshot with new snapshot
+4 : identify and apply changes to the real DOM
+
+state batching: state changes of same value within the same function will only trigger the component to render once
+
+million.js: react optimize package by just configuring into any react project
