@@ -102,3 +102,18 @@ million.js: react optimize package by just configuring into any react project
 
 - hooks (useEffect, useState)
 - context 
+
+# Section 15: sending http requests
+- fetching and saving user places 
+
+# Section 16: building custom react hooks
+repetition: rules of hooks
+- only call hooks inside of component or other hook (custom hook) functions
+- only call hooks on the top level 
+
+why custom hooks?
+- to enhance reusability
+
+hooks
+- conventionally starts with "use" prefix. Eventually, all hooks are also just functions, thus, can be called anywhere. However, React project structure enforces these functions that start with "use" prefix to be only used following rules of hooks
+
