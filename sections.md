@@ -126,4 +126,16 @@ There are various strategies to extract user input such as
 
 As we extract data, we implement validation as desired and needed
 
+# Section 18: handling-forms via form actions
+useStateAction
+- given a custom function which likely extracts and handle form data
+- return form state and form action as values which can be used during form submission 
+
+useFormStatus
+- has to be used seperately in an isolated component to provide form status data
+
+useOptimistic
+- used to optimistically update data that can be displayed to users ahead of data update
+- roll back if data update fails
+
 
