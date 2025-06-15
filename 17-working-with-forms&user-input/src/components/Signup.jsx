@@ -1,5 +1,11 @@
 import {useState} from "react";
 
+/* ! notes
+ ? form validation when form is submitted
+ ? FormData object which is provided by browsers allows us to extract data from user inputs
+ ?
+ */
+
 export default function Signup() {
 
     const [passwordAreNotEqual, setPasswordAreNotEqual] = useState(false);
@@ -18,9 +24,7 @@ export default function Signup() {
         }
 
         console.log(data)
-
         event.target.reset();
-
     }
   return (
     <form onSubmit={handleSubmit}>

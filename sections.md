@@ -118,4 +118,12 @@ hooks
 - conventionally starts with "use" prefix. Eventually, all hooks are also just functions, thus, can be called anywhere. However, React project structure enforces these functions that start with "use" prefix to be only used following rules of hooks
 
 # Section 17: working-with-forms&user-input
+form data extraction and validation
+There are various strategies to extract user input such as
+- useRef
+- useState
+- FormData Object
+
+As we extract data, we implement validation as desired and needed
+
 

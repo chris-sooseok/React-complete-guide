@@ -1,27 +1,41 @@
 import {useRef, useState} from "react";
 
+/* ! notes
+ ? form validation using ref
+ ? when form submitted, the validation takes place
+ ? since when using ref, we have to reset the value imperatively, which is discouraged
+ ? Therefore, the strategy used in StateLogin which uses states are encouraged
+*/
+
 export default function Login() {
 
     const [ emailIsInvalid, setEmailIsInvalid ] = useState(false);
+    const [ passwordIsInvalid, setPasswordIsInvalid ] = useState(false);
     const email = useRef();
     const password = useRef();
 
     function handleSubmit(event) {
-        // prevent browser default behavior that submits the form
+        // ? prevent browser default behavior that submits the form
         event.preventDefault();
 
         const enteredEmail = email.current.value;
         const enteredPassword = password.current.value;
 
         const emailIsValid = enteredEmail.includes('@');
+        const passwordIsValid = enteredPassword.length >= 6;
 
         if (!emailIsValid) {
             setEmailIsInvalid(true);
             return;
         }
 
-        setEmailIsInvalid(false);
+        if (!passwordIsValid) {
+            setPasswordIsInvalid(true);
+            return;
+        }
 
+        setEmailIsInvalid(false);
+        setPasswordIsInvalid(false);
 
         // ! since this is discouraged, the approach used in Signup component is recommended
         email.current.value = '';

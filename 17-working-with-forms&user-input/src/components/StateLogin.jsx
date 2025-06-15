@@ -2,6 +2,12 @@ import Input from "./Input.jsx";
 import {isEmail, isNotEmpty, hasMinLength} from "../util/validation.js";
 import {useInput} from "../hooks/useInput.js";
 
+/* ! notes
+ ? form validation actively using states
+ ? as user types, useState actively validates user inputs with certain conditions
+ ? input forms, validation logics, and states are all outsourced to achieve adaptability and efficiency
+ */
+
 export default function Login() {
 
     const {
@@ -28,23 +34,6 @@ export default function Login() {
 
         console.log(emailValue, passwordValue);
     }
-
-    // function handleInputChange(identifier, value) {
-    //     setEnteredValues(prevValues => ({
-    //         ...prevValues, [identifier]: value,
-    //     }))
-    //     setDidEdit(prevEdit => ({
-    //         ...prevEdit,
-    //         [identifier]: false
-    //     }));
-    // }
-    //
-    // function handleInputBlur(identifier) {
-    //     setDidEdit(prevEdit => ({
-    //         ...prevEdit,
-    //         [identifier]: true
-    //     }));
-    // }
 
     return (<form onSubmit={handleSubmit}>
         <h2>Login</h2>
