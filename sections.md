@@ -162,9 +162,15 @@ How does Redux work?
  Reducer Function ---> Central Data Store -- subscription --> Components --> Action --> forwards to reducer
  
 Reducer Function
-- takes input, old state, and dispatched action, then, returns new state object
+- takes old state, and dispatched action, then, returns new state object
+- must be synchronous and side-effect free
 
 redux installation
 npm install redux
 redux toolkit
-npm install @reduxjs/toolkit
+ 
+
+# Section 21: advanced redux
+where should side-effects & async tasks be executed?
+- inside components
+- inside action creators 
