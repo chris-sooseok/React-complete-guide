@@ -138,4 +138,28 @@ useOptimistic
 - used to optimistically update data that can be displayed to users ahead of data update
 - roll back if data update fails
 
+# Section 20: redux
+Redux - a state menagement system for cross-component or app-wide state
+State - Data which, when changed, should affect the UI
 
+Three kinds of State
+- Local state
+    - belong to single component
+    - ex. listening to user input
+- cross-component state
+    - affect multiple components
+    - ex. open / close state of modal
+- app-wide state
+    - ex. user authentication
+    
+ React Context has some potential disadvantages
+ - deeply nested providers or very complex context composed of gigantic features 
+ - performance inadequate for high frequent data changes
+ 
+How does Redux work?
+ - Central Data Store (unique store)
+ 
+ Reducer Function ---> Central Data Store -- subscription --> Components --> Action --> forwards to reducer
+ 
+Reducer Function
+- takes input, old state, and dispatched action, then, returns new state object
