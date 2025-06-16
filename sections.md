@@ -163,3 +163,8 @@ How does Redux work?
  
 Reducer Function
 - takes input, old state, and dispatched action, then, returns new state object
+
+redux installation
+npm install redux
+redux toolkit
+npm install @reduxjs/toolkit
