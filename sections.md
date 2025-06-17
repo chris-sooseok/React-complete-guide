@@ -186,3 +186,5 @@ Thunk
 
 Redux devtools
 - browser built-in
+
+# Section 22: Building a multi page SPA with React Router
