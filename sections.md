@@ -188,3 +188,6 @@ Redux devtools
 - browser built-in
 
 # Section 22: Building a multi page SPA with React Router
+Single Page Application is way more efficient than route-based multiple pages application
+
+npm install react-router-dom
