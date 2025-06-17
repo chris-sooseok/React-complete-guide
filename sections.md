@@ -171,6 +171,18 @@ redux toolkit
  
 
 # Section 21: advanced redux
-where should side-effects & async tasks be executed?
+where should side-effects & async tasks (http request) be executed?
 - inside components
 - inside action creators 
+
+Firebase as backend
+
+Since redux store can't contain async or side-effect functions, we need to decide which of each needs to be distributed. Options are
+- inside components (such as app.js or related component)
+- action creator
+
+Thunk 
+- an action creator function that doesn't return the action itself but another function which eventually returns the action
+
+Redux devtools
+- browser built-in
