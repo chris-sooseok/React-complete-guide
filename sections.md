@@ -223,4 +223,7 @@ Steps
     - firebase hosting
 - configure
 
+# Section 25: react query: tanstack 3rd library
 
+
+npm install @tanstack/react-query
