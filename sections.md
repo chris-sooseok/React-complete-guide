@@ -211,3 +211,16 @@ useNavagation
 useLoaderRouter
 createBrowserRouter
 
+# Section 24: deployment
+
+Steps
+- test code,
+- optimize code
+    - lazy loading
+- build
+    - npm run build
+- upload app
+    - firebase hosting
+- configure
+
+
