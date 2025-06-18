@@ -195,3 +195,19 @@ npm install react-router-dom
 
 // ? throwing error will trigger the closest errorElement
 // ! await here ensures that the data is loaded before rendering the page
+
+
+# Section 23: authentication
+authentication approaches
+- server-side sessions (tight-coupled application)
+- authentication tokens (decoupled application)
+
+useFetcher
+uesSearchParams
+useNavigate
+useActionData
+useSubmit
+useNavagation
+useLoaderRouter
+createBrowserRouter
+

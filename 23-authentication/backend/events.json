@@ -1,12 +1,1 @@
-{
-  "events": [
-    {
-      "title": "A new event",
-      "image": "https://cdn.muenchen-p.de/fl_progressive,q_65/.imaging/stk/responsive/teaser300/dms/va-2016/muenchner-christkindlmarkt/christkindlmarkt-marienplat-logo-hp/document/christkindlmarkt-marienplat-logo-hp.jpg",
-      "date": "2022-10-01",
-      "description": "Some awesome event!",
-      "id": "2a42fcc4-ea21-4bdd-abf6-c40006dc66a9"
-    }
-  ],
-  "users": []
-}
+{"events":[{"title":"dasdas","image":"https://www.google.com/imgres?q=event%20image&imgurl=https%3A%2F%2Fstatic.vecteezy.com%2Fsystem%2Fresources%2Fthumbnails%2F041%2F388%2F388%2Fsmall%2Fai-generated-concert-crowd-enjoying-live-music-event-photo.jpg&imgrefurl=https%3A%2F%2Fwww.vecteezy.com%2Ffree-photos%2Fevent&docid=ycKOVCkRANdvUM&tbnid=HHvmbjKXHlLX0M&vet=12ahUKEwjX95STj_mNAxV0UfUHHcLZAOYQM3oECBgQAA..i&w=357&h=200&hcb=2&ved=2ahUKEwjX95STj_mNAxV0UfUHHcLZAOYQM3oECBgQAA","date":"2025-06-18","description":"dasd","id":"576fb7f7-1a5a-4c5f-9faa-2be8744f5567"}],"users":[{"email":"dsadas@ds.com","password":"$2a$12$1ESxZek/Lm/0k/H.zZf4rOTJWD56MOEwTzhJVu8GyYllnESZCfGSi","id":"9683ff3b-f6dc-4596-b595-7f1deaa34ba6"},{"email":"sooseokk@buffalo.edu","password":"$2a$12$L9e5gcf4ZAycAjkT5YK8jeaLn1hx1pSBFy0fc5Qifj8gkzXP/6HbO","id":"4ee056d5-eeb3-42f4-953b-7f1235c03321"},{"email":"sooseokk@buffalo.e","password":"$2a$12$yheIcKB/NdTTeo8nE4Tgb.PM.2rZHqsgJq4h5WbG5go24qwn6VAd2","id":"527237ba-d5c5-44d6-9dd5-b03d0d80519a"}]}
