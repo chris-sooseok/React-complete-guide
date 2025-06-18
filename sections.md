@@ -191,3 +191,11 @@ Redux devtools
 Single Page Application is way more efficient than route-based multiple pages application
 
 npm install react-router-dom
+
+
+
+
+
+
+// ? throwing error will trigger the closest errorElement
+// ! await here ensures that the data is loaded before rendering the page
