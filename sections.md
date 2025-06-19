@@ -232,4 +232,8 @@ useQuery
 - updates elements when data changed behind the scene and tab switches happen
 
 React Query vs React Router
-  
+
+# Section 26: nextjs fullstack
+
+npx create-next-app@latest [project-name]
+
