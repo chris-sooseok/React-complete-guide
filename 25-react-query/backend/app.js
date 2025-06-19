@@ -58,6 +58,7 @@ app.get('/events/images', async (req, res) => {
 app.get('/events/:id', async (req, res) => {
   const { id } = req.params;
 
+
   const eventsFileContent = await fs.readFile('./data/events.json');
   const events = JSON.parse(eventsFileContent);
 

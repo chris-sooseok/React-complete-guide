@@ -49,13 +49,13 @@ Browser Developer Extension
 - show structures of and details on components such as which functions and props are being used
 
 # Section 8: working with refs & portals
-Refs
+useRef
 - doesn't re-evaluate components
 - can be used to gain direct DOM element access (-> great for reading values or accessing certain browser APIs)
 - ref is a way to access a DOM node or React element instance directly
 
 
-State
+useState
 - causes component reevaluation
 - should be used for values that are directly reflected in the UI
 
@@ -227,3 +227,9 @@ Steps
 
 
 npm install @tanstack/react-query
+
+useQuery
+- updates elements when data changed behind the scene and tab switches happen
+
+React Query vs React Router
+  
