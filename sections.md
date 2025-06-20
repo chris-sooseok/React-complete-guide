@@ -236,4 +236,28 @@ React Query vs React Router
 # Section 26: nextjs fullstack
 
 npx create-next-app@latest [project-name]
+npm install better-sqlite3
+npm install slugify xss
 
+nextjs
+- app router folder : filesystem-based routing
+- treat page.js is server-side rendered component
+
+## React Server Components (RSC) vs Client Components
+
+
+RSC
+- only rendered on the server
+- by default, all components in NextJS are RSCs
+- less client-side JS, and great for SEO
+
+Client Component
+- pre-rendered on the server but then also potentially on the client 
+
+
+usePathname
+- gives you path query string
+
+
+## nextjs works with very aggressive caching 
+This becomes problematic when updates happen in some data
