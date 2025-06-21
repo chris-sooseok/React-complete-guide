@@ -42,7 +42,7 @@ export default function ChallengeItem({
             </p>
           </div>
         </header>
-        <div className={`challenge-item-details ${isExpanded ? 'expanded' : ''}`}>
+        <div className="challenge-item-details">
           <p>
             <button onClick={onViewDetails}>
               View Details{' '}
