@@ -261,3 +261,19 @@ usePathname
 
 ## nextjs works with very aggressive caching 
 This becomes problematic when updates happen in some data
+
+# Section 27: RSC & Server Actions
+## React features you might not be able to use
+- React server component
+    - need server-side environment 
+- server actions
+- use() with Promises
+    
+
+## Understanding server components & client components
+## Making sense of & using server actions
+## suspense & the use() hook
+
+## Combining RSC & Client Components
+RSC can directly include client-components in their JSX code, but
+Client-components can only inlcude RSC as children
