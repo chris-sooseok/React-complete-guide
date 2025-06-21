@@ -280,3 +280,5 @@ Client-components can only inlcude RSC as children
 
 # Section 28: animating-react-apps
 npm install framer-motion
+
+framer-motion 
