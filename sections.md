@@ -277,3 +277,5 @@ This becomes problematic when updates happen in some data
 ## Combining RSC & Client Components
 RSC can directly include client-components in their JSX code, but
 Client-components can only inlcude RSC as children
+
+# Section 28: animating-react-apps
