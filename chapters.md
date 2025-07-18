@@ -1,18 +1,17 @@
 
 # Chapter 3: Introduction to React
 
+useState
+
 The core take-away in Chapter 3
     - React is component-based framework which means it pursues a reusability of objects
-    - Depending on the action applied to web components, we use hooks to the applied action to display desirable results
-    - React is also capable of rendering dynamic data through loop. Dynamically display components and data upon actions that users apply to your pages
+    - uses jsx extension that describes and create HTML elements in JS declarative way
+        - However, jsx is not supported by browsers, so it transforms into browser-readable elements by returning HTML(ish) code
     - Styles are applied, as one of options, by passing ids to your component elements
 
-## jsx 
-    - Used to describe & create HTML elements in JS in a declrative way
-    - However, jsx is not supported by browsers, so it transforms into browser-readable elements by returning HTML(ish) code
-
-
 # Chapter 4: Tic-tac-toe Game
+
+useState
 
 The core take-away in Chapter 4
     - You can pass a function which handles a state value to a lower component which will pass the value to the passed function that will then update the value of its component
@@ -22,11 +21,17 @@ The core take-away in Chapter 4
 
 # Chapter 5: Investment Calculator
 
+useState
+
 The core take-away in Chapter 5
     - In input field, you can receive typed text as a argument and assign it to some desinated function
 
 
 # Chapter 6: Styling React Components
+
+useState
+styled-components
+
 
 ## Vanilla CSS
 - convenient, but broadly applied to children components
@@ -49,6 +54,9 @@ Adavantages
 
 
 # Chapter 7: Debugging react apps
+
+<StrictMode>
+
 Browser Sources Tab:
     - can create a breakpoint on browser in Sources tab
 
@@ -82,6 +90,10 @@ The core take-away in Chapter 8
     
 
 # Chapter 9: Project management application
+
+useRef
+useImperativeHandle
+createPortal
 
 Chapter 9 implements project management app applying the concepts that has been covered in the previous chapters such as
     -   useRef, useImperativeHandle, createPortal
@@ -519,4 +531,5 @@ React Testing Library
 # Chapter 32: typescript
 npx create-react-app <project> --template typescript
 npx tsc <filename>
+Type-based javascript
 
