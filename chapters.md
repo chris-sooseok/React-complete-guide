@@ -4,6 +4,7 @@
 useState
 
 The core take-away in Chapter 3
+
     - React is component-based framework which means it pursues a reusability of objects
     - uses jsx extension that describes and create HTML elements in JS declarative way
         - However, jsx is not supported by browsers, so it transforms into browser-readable elements by returning HTML(ish) code
@@ -14,6 +15,7 @@ The core take-away in Chapter 3
 useState
 
 The core take-away in Chapter 4
+
     - You can pass a function which handles a state value to a lower component which will pass the value to the passed function that will then update the value of its component
     - Changes made with useState will re-render a component always whenever changes happen
     - It is important to use as little hooks as possible to optimize performance and complexity
@@ -24,6 +26,7 @@ The core take-away in Chapter 4
 useState
 
 The core take-away in Chapter 5
+
     - In input field, you can receive typed text as a argument and assign it to some desinated function
 
 
@@ -34,6 +37,7 @@ styled-components
 
 
 ## Vanilla CSS
+
 - convenient, but broadly applied to children components
 
 ## Scoping Styles with CSS moduels
@@ -58,24 +62,28 @@ Adavantages
 <StrictMode>
 
 Browser Sources Tab:
+
     - can create a breakpoint on browser in Sources tab
 
 Strict Mode component
+
     - provided by react package
     - executes every component twice during development phase
 
 Browser Developer Extension
+
     - profiler to estimate rendering time
     - components to inspect structure
 
 
 # Chapter 8: Working with refs & portal buidling Timer Challenge
 
-useRef
-useImperativeHandle
-createPortal
+- useRef
+- useImperativeHandle
+- createPortal
 
 The core take-away in Chapter 8
+
     - useRef
         - needed especially when you need a state that doesn't re-render everytime
         - not shared between component instances
@@ -91,22 +99,24 @@ The core take-away in Chapter 8
 
 # Chapter 9: Project management application
 
-useRef
-useImperativeHandle
-createPortal
+- useRef
+- useImperativeHandle
+- createPortal
 
 Chapter 9 implements project management app applying the concepts that has been covered in the previous chapters such as
+
     -   useRef, useImperativeHandle, createPortal
     -   use useState value collectively by inserting dictionary that contains various data
 
 
 # Chapter 10: Providing API context for shopping cart
 
-createContext
-useReducer
-useContext
+- createContext
+- useReducer
+- useContext
 
 The key take-away in Chapter 10
+
     - API context
         - createContext paired with useReducer provides global data and API to manage the data
         - useContext allows each component to fetch the data and API methods
@@ -114,10 +124,11 @@ The key take-away in Chapter 10
  
 # Chapter 11: Place Picker App handling side effect
 
-useEffect
-useCallback
+- useEffect
+- useCallback
 
 The key take-away in Chapter 11
+
     useEffect
         - handle a side effect that needs to be managed after component renders
         - specify dependency that defines which values trigger re-rendering
@@ -133,6 +144,7 @@ The key take-away in Chapter 11
 # Chapter 12: Building quiz app
 
 Chapter 12 uses the concepts that have been covered in the previous chpaters
+
     - useEffect
     - useCallback
 
@@ -140,6 +152,7 @@ Chapter 12 uses the concepts that have been covered in the previous chpaters
 # Chapter 13: Counter App with Optimization Techniques
 
 The core key-away in Chapter 13
+
     - memo
         -   prevents re-rendering of entire component by comparing props
         -   don't use it on components where its props will change often
@@ -233,6 +246,7 @@ Context API and useActionState
 # Chapter 19: Building Food Order App
 
 Chapter 19 reiterate in-depth examples of context API and custom hooks
+
     - Context API and Custom Hook
         Context API
             - managing userProgress status through context API
@@ -243,27 +257,29 @@ Chapter 19 reiterate in-depth examples of context API and custom hooks
 
 # Chapter 20, 21: Shopping cart with redux
 
-npm install redux
-redux toolkit
+- npm install redux
+- redux toolkit
 
 Redux Toolkit
-    createSlice
+    - createSlice
         - define a slice of state with its actions and reducers in Redux store
         - this connects to hooks (useDispatch, useSelector)
-    useSelector
+    - useSelector
         - subscribes to Redux store that checks shallow comparison
         - to read values from the Redux store
         - re-renders the component if the selected state changes
-    useDispatch
+    - useDispatch
         - send action to the store to trigger reducer function
-    configureStore
+    - configureStore
         - manage redux store
 
 Differences between Context API and Redux
+
     - Redux is more powerful and optimized for performance and scalability
     - Redux offers selective re-rendering that only components which use the specific part of state will re-render when that changes
 
 More about Redux
+
     - Action and Reducer
         - Action
             - is a plain object that contains type and payload
@@ -289,38 +305,38 @@ More about Redux
       
 # Chapter 22: React Router building SPA Introduction
 
-So far, we have built only a single page React component. However, it is not ideal to display all components in the same path as the project gets bigger
+- So far, we have built only a single page React component. However, it is not ideal to display all components in the same path as the project gets bigger
 
-npm install react-router-dom
+- npm install react-router-dom
 
-createBrowserRouter
+- createBrowserRouter
     - craete the main structure of path directory
     - you specify the root path, Root component, error page, and children path and components
-Outlet
+- Outlet
     - used in Root component which you can specify where its child components can be rendered
-RouterProvider
+- RouterProvider
     - the main wrapper that provides routing logic and structure
-Link
+- Link
     - lets you navigate within your single-page application using react-router. No server request is made when changing routes
     - renders <a> element
     - maintain component state
-useNavigate
+- useNavigate
     - hook that allows you to nativate in response to an event or inside logic
-useParams
+- useParams
     - hook that lets you read route parameters from the current URL
-NavLink
+- NavLink
     - is a special version of Link that can automatically apply styles or classes when the link is active, meaning the current URL matches its "to" prop
     
-SPA upside
+- SPA upside
     - fewer page reloads
     - preserved state
-SPA downside comparede to MPA
+- SPA downside comparede to MPA
     - can be slow for initial load
     - SEO unfriendly by default
     - social sharing can be tricky
     - sometimes full page load is desired (clearning state after logout), but SPAs must handle these manually
     
-Distinction between pages and components
+- Distinction between pages and components
     - pages
         - Components directly mapped to a route
     - components
@@ -328,32 +344,32 @@ Distinction between pages and components
 
 # Chapter 22: React router advanced
 
-useNavigation
+- useNavigation
     - gives you information about the current navigation state
     - state value can be idle, loading, or submitting, etc.
-useRouterError
+- useRouterError
     - holds an error thrown from Router
-useLoaderData
+- useLoaderData
     - React router can take loader function which promises to load data before page is rendered
     - useLoaderData loads that data and allows access to it through component
-useRouterLoaderData
+- useRouterLoaderData
     - requires Route ID to access specific data
     - allows you to access loader data from parent route
     - used when that loaded data is shared with other route
-Suspense
+- Suspense
     - while loader fetches data, Suspense renders a waiting status component
-Await
+- Await
     - Await waits for loader to fetch data, then, when it arrives it feeds to-be-displayed component the data
-useSubmit
+- useSubmit
     - follow Action Resolution Rule which follows up the hierarchy of actions through Route
     - Then, uses the action that is the closest.
-useActionData
+- useActionData
     - hook that returns data from the most recently exected action function
     - especially designed for handling form submission results
     - can handle any type of action function, not only form submission
     - since any route can have only one action, there is no ambiguity of which action it is tied to
 
-useFetcher vs regular form
+- useFetcher vs regular form
     - use regular form when
         - Action belongs to the current route
         - It's the primary action of the page
@@ -371,11 +387,11 @@ useFetcher vs regular form
 
 # Chapter 23: Authentication
 
-useSearchParams
+- useSearchParams
     - used to query optional parameters of url
     - useful when you are using the same page resource, but changes the content
 
-authentication approaches
+- authentication approaches
     - server-side sessions (tight-coupled application)
     - authentication tokens (decoupled application)
 
@@ -404,30 +420,30 @@ Tanstack is data-fetching library for handling server-side data in React apps th
     - handling loading/error states
     - sync data across components
 
-Navigate
+- Navigate
     - used for jsx rendering
-QueryClient
+- QueryClient
     - is a centralized cache store
     - maps query keys to cached data
     - tracks which components are using which queries
     - metadata about each query
-useQuery
+- useQuery
     - creates an 'observer' for a specified query key
     - QueryClient maintains a list of observers for each query key
     - when the component querying specific data unmounts, that observer is also removed
     - automatically provides AbortSignal to query function to handle request
     - initially, fetches data when first loaded
-useMutation
+- useMutation
     - hook that is designed to handle data mutations (craete, update, delete)
     - used to call function action, invalidate cache, and handle form state and error
-QueryClientProvider
+- QueryClientProvider
     - wraps the component that you want to provide react query functionalities
     - This is very similar to how Context API is used, but has some more advantages
         - Cache storage
         - Background refetching
         - Cache invalidation
         - Optimistic Update
-useIsFetching
+- useIsFetching
     - catches any state that is being loaded and show its state
     
 npm install @tanstack/react-query
@@ -440,44 +456,49 @@ npm install better-sqlite3
 npm install slugify xss
 
 NextJS
+
     - React fullstack framework
     - provides router logic via file-based routing system
     - very aggressive caching
             
 Page router app
+
     - uses client components
     - pre-rendering + hydration (SSR & SSG)
         - pre-render HTML and hydrate (attaching JS event handlers) to make it interactive on client side
         - React originally build everything on client side
     - functions that handles backend operations reside in api folder
     - manually have to handle layout
-    getStaticProps and getStaticPaths (SSR)
+    - getStaticProps and getStaticPaths (SSR)
         - enables to load data before pre-rendering HTML to display the full HTML content
         - can't use React hooks inside
-    getServerSideProps (SSG)
+    - getServerSideProps (SSG)
         - executed on every request and regenerate HTML with updated data
         - can't use React hooks inside
-    useRouter
+    - useRouter
         - allows you access to routing path
 
 App router app
+
     - uses server components
     - components can stay server-only and avoid hydration entirely
     - only hydrates the components that use "use client" directive
     - since all components initially rendered on server-side, it is allowed to use server-side function inside components
     - use "use server" directive for actions funtions which are used on client-side
     - provides layout
-    useFormState
+    - useFormState
         - same as useActionState
-    usePathname
+    - usePathname
         - gives you path query string
         
 Without NextJS, you can't use
+
     - react server component
     - server actions
     - use() with Promise
     
 Deployment
+
     - vercel
         - git commit
         - npm run build
@@ -485,23 +506,27 @@ Deployment
 # Section 27: RSC & Server Actions
 
 React Server Components (RSC) vs Client Components
+
     - RSC can directly include client-components in their JSX code, but client-components can only include server component as children since it is already completed on server side
     
 # Section 28: animating-react-apps
-npm install framer-motion
-framer-motion 
+- npm install framer-motion
+- framer-motion 
 
 # Chapter 29: Best patterns & practices
 
 Compound Component
+
     - multiple components that only work together
     - restrict components to be used only within its compound
     - restrict access to its Context API
 
 Render Props
+
     - allows to pass different types of data as props
     
 Debouncing
+
     - used for search feature that both delays or cancel HTTP requestsetSearchTerm
 
 # Chapter 31: testing
@@ -509,6 +534,7 @@ Debouncing
 npm test
 
 Unit test
+
     - individual building blocks (functions, components) in isolation
     - easily end up hundrends
 Integration test
@@ -517,6 +543,7 @@ end-to-end test
     - test complete scenarios/user-flows 
 
 how to test
+
     - success, error, and edge cases
     - Arrange, Act, and Assert
         - Set up data, conditions, and environment
@@ -524,8 +551,11 @@ how to test
         - Compare execution results with expected results
 
 Jest
+
     - tool for running test and asserting the results
+    
 React Testing Library
+
     - simulating (rendering) app / components
     
 # Chapter 32: typescript
