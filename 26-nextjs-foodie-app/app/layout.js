@@ -1,6 +1,5 @@
 import MainHeader from "@/components/main-header/main-header";
 
-
 // ! SEC can be added here as well
 export const metadata = {
   title: 'NextLevel Food',
@@ -11,7 +10,6 @@ export default function RootLayout({ children }) {
   return (
     <html lang="en">
       <body>
-
         <MainHeader />
         {children}
       </body>

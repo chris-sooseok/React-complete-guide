@@ -1,5 +1,9 @@
 import { useState, useRef } from "react";
 import ResultModal from "./ResultModal.jsx";
+/*
+* * handleStart activates interval which uniformly deducts time
+* * handleStop deactivates interval and prompt dialog open
+* **/
 
 // ! This way, the variable is shared across all TimerChallenge components
 // let timer
@@ -7,16 +11,11 @@ import ResultModal from "./ResultModal.jsx";
 export default function TimerChallenge({ title, targetTime }) {
   // ? ref is not reset on every render nor not shared across all components
   const timer = useRef();
-  
-  /* 
-  ? assinging the value to ref={...} React puts a DOM node in .current
-  ? so we can use it to access the dialog element and call its showModal() method */
+
+  // ? assigning the value to ref={...} React puts a DOM node in .current
+  // ? so we can use it to access the dialog element and call its showModal() method
   const dialog = useRef();
-
   const [timeRemaining, setTimeRemaining] = useState(targetTime * 1000);
-
-  // ! This way, the variable is reset on every render
-  // let timer;
 
   // ? check if timer is running
   const timerIsActive = timeRemaining > 0 && timeRemaining < targetTime * 1000;
@@ -26,14 +25,14 @@ export default function TimerChallenge({ title, targetTime }) {
     dialog.current.open();
   }
 
-  // passed to ResultModal and called when ResultModal page is closed
+  // ? passed to ResultModal and called when ResultModal page is closed
   function handleReset() {
     setTimeRemaining(targetTime * 1000);
   }
 
-  // deduct remaning time every 10 ms
+  // ? deduct remaining time every 10 ms
   function handleStart() {
-    // set TimerExpired to true after targetTime seconds
+    // ? set TimerExpired to true after targetTime seconds
     timer.current = setInterval(
       () => {
         setTimeRemaining((prevTimeRemaining) => prevTimeRemaining - 10);
@@ -42,8 +41,9 @@ export default function TimerChallenge({ title, targetTime }) {
     );
   }
 
-  // when stop is pressed
+  // ? when stop is pressed
   function handleStop() {
+    // ! this open method is defined in useImperativeHandle in ResultModal
     dialog.current.open();
     clearInterval(timer.current);
   }

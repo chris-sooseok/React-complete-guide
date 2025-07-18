@@ -1,7 +1,7 @@
 import {isEmail, isNotEmpty, isEqualToOtherValue, hasMinLength} from "../util/validation.js";
 import {useActionState} from 'react';
 
-// though prevFormState is not used here, still needs to accept it since that is general rules
+// * though prevFormState is not used here, still needs to accept it since that is general rules
 function signupAction(prevFormState, formData) {
     const email = formData.get('email');
     const password = formData.get('password');

@@ -6,16 +6,11 @@ import ErrorBlock from "../UI/ErrorBlock.jsx";
 import EventItem from "./EventItem.jsx";
 
 export default function FindEventSection() {
-    // ? allow direct access while changes don't trigger re-rendering
     const searchElement = useRef();
-    // ? setting initial value to undefined to distinguish behavior between the initial webpage load and empty string search
-    // ! useState is used to re-render this specific component when form is submitted
     const [searchTerm, setSearchTerm] = useState();
 
-    // ! as searchElement value changes, it won't trigger useQuery again
-    // ! with isPending, when query is disabled, it set the query to pending state, waiting for the query to be enabled
-    // ! with isLoading, when query is disabled, it set the query disabled too
     const {data, isLoading, isError, error} = useQuery({
+        // ! searchTerm is a dependency which will trigger the function when it changes
         queryKey: ['events', {searchTerm}],
         queryFn: ({signal, queryKey}) => fetchEvents({signal, ...queryKey[1]}),
         enabled: searchTerm !== undefined,

@@ -16,7 +16,6 @@ export function OpinionsContextProvider({ children }) {
       const opinions = await response.json();
       setOpinions(opinions);
     }
-
     loadOpinions();
   }, []);
 

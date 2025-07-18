@@ -1,4 +1,4 @@
-import { useRef } from "react";
+import { useRef, useState } from "react";
 
 export default function Player() {
 
@@ -10,6 +10,8 @@ export default function Player() {
     setEnteredPlayerName(playerName.current.value);
     playerName.current.value = ''; // clear the input field after setting the name
   }
+
+  console.log('rendered..');
 
   return (
     <section id="player">

@@ -1,6 +1,3 @@
-
-import { redirect } from 'react-router-dom';
-
 import EventForm from '../components/EventForm';
 
 function NewEventPage() {
@@ -9,7 +6,7 @@ function NewEventPage() {
 
 export default NewEventPage;
 
-// // ! from EventForm, Form from react router dom has been used which doesn't instantly send request to backend, but pass the data to action function below
+//  ! from EventForm, Form from react router dom has been used which doesn't instantly send request to backend, but pass the data to action function below
 // export async function action({ request, params }) {
 //     const data = await request.formData();
 //

@@ -10,6 +10,8 @@ import {useInput} from "../hooks/useInput.js";
 
 export default function Login() {
 
+    // ! the custom hook becomes part of StateLogin's component lifecycle
+    // ! which means useState in useInput belong to StateLogin
     const {
         value: emailValue,
         handleInputChange: handleEmailChange,

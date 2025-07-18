@@ -10,6 +10,9 @@ async function sendHttpRequest(url, config){
     return resData;
 }
 
+
+// ! custom hook gets embedded into the component that imports it
+// ! Therefore, the function doesn't get recreated unless its dependency changes
 export default function useHttp(url, config, initialData) {
     const [ data, setData ] = useState(initialData);
     const [ isLoading, setIsLoading ] = useState(false);
@@ -19,6 +22,7 @@ export default function useHttp(url, config, initialData) {
         setData(initialData);
     }
 
+    // ! useCallback to prevent loop since it is used as dependency below
     const sendRequest = useCallback(async function sendRequest(data) {
         setIsLoading(true);
         try {

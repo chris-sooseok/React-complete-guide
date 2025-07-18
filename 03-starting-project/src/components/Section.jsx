@@ -1,5 +1,7 @@
 export default function Section({ title, children, ...props }) {
-  return (
+
+    // ? here props contains {id: 'examples'}
+    return (
     <section {...props}>
       <h2>{title}</h2>
       {children}

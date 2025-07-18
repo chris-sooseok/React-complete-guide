@@ -14,17 +14,21 @@ export default function ResultModal({
 
   const score = Math.round((1 - timeRemaining / (targetTime * 1000)) * 100);
 
-  // this allows someone calling ref.current.open() from outside to open the modal
-  // useImperativeHandle customizes what custom methods .current exposes
+  // ! this allows someone calling ref.current.open() from outside to open the modal
+  // ! useImperativeHandle customizes what custom methods .current exposes
   useImperativeHandle(ref, () => {
     return {
+
       open() {
+          // ! dialog.current refers to an actual HTML DOM element, so it can call browser native API
         dialog.current.showModal();
       },
+
     };
   });
 
   return createPortal(
+      // passing dialog to dialog element
     <dialog ref={dialog} className="result-modal">
       {userLost && <h2>You lost</h2>}
       {!userLost && <h2>Your score: {score}</h2>}

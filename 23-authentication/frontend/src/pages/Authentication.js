@@ -4,9 +4,11 @@ import {redirect} from "react-router-dom";
 function AuthenticationPage() {
   return <AuthForm />;
 }
+
 export default AuthenticationPage;
 
-export async function action({request}) {
+export async function authenticateAction({request}) {
+  // * way to get searchParams parameters from request url
   const searchParams = new URL(request.url).searchParams;
   const mode = searchParams.get('mode') || 'login';
 

@@ -2,7 +2,9 @@ import {uiActions} from './ui-slice';
 import {cartActions} from './cart-slice';
 
 export const fetchCartData = () => {
+    // * dispatch is passed from Redux Thunk middleware
     return async (dispatch) => {
+        // * defining function
         const fetchData = async () => {
             const response = await fetch(
                 'https://react-http-230ba-default-rtdb.firebaseio.com/cart.json'

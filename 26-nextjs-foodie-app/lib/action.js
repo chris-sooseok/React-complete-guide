@@ -2,7 +2,10 @@
 
 import { redirect } from 'next/navigation';
 import { saveMeal } from './meals';
-import {revalidatePath} from "next/cache";
+import { revalidatePath } from "next/cache";
+
+
+// ! contains server actions which are called on client-side as CRUD operations
 
 function isInvalidText(text) {
     return !text || text.trim() === '';
@@ -38,7 +41,8 @@ export async function shareMeal(prevState, formData) {
     await saveMeal(meal);
 
     // revalidate caches after save
-    // ('/', 'layout') will revalidate all nested pages
+    // used since nextjs is aggressive on caching
+    // revalidate all next pages
     revalidatePath('/meals', );
     redirect('/meals');
 }

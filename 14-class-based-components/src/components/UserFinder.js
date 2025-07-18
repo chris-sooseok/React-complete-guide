@@ -13,6 +13,7 @@ import ErrorBoundary from "./ErrorBoundary";
 class UserFinder extends Component {
   static contextType = UsersContext;
 
+  // * setting state value of the component
   constructor() {
     super();
     this.state = {
@@ -22,9 +23,9 @@ class UserFinder extends Component {
   }
 
   // ! below is logic for useEffect
-  // this is called when the component is first mounted to the DOM
+  // * this is called when the component is first mounted to the DOM
   componentDidMount() {
-    // Send http rquest
+    // accessing context value and assigning
     this.setState({filteredUsers: this.context.users});
   }
 
@@ -40,7 +41,6 @@ class UserFinder extends Component {
   }
 
   searchChangeHandler(event) {
-    // it is merged with the current state so that filterUsers data won't be lost
     this.setState({ searchTerm: event.target.value });
   }
 

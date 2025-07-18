@@ -11,8 +11,6 @@ import Error from "./components/Error.jsx";
 function App() {
   const selectedPlace = useRef();
   const [ userPlaces, setUserPlaces ] = useState([]);
-
-
   const [ modalIsOpen, setModalIsOpen ] = useState(false);
   const [ errorUpdatingPlaces, setErrorUpdatingPlaces ] = useState();
   const [ isFetching, setIsFetching ] = useState(false);
@@ -43,7 +41,6 @@ function App() {
     setModalIsOpen(false);
   }
 
-  // ? passed to AvailablePlaces component
   async function handleSelectPlace(selectedPlace) {
     setUserPlaces((prevPickedPlaces) => {
       if (!prevPickedPlaces) {
@@ -58,6 +55,7 @@ function App() {
     try {
       await updateUserPlaces([selectedPlace, ...userPlaces]);
     } catch (error) {
+      // * reset the userPlaces
       setUserPlaces(userPlaces);
       setErrorUpdatingPlaces({
         message: error.message || "Failed to update user places",

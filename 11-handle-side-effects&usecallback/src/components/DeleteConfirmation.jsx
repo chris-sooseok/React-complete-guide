@@ -6,10 +6,13 @@ const TIMER = 3000;
 export default function DeleteConfirmation({ onConfirm, onCancel }) {
 
   useEffect(() => {
+    // * creating side-effect
     const timer = setTimeout(() => {
       onConfirm();
     }, TIMER);
 
+    // ! this returns when DeleteConfirmation unmounts
+    // * cleaning up the side-effect
     return () => {
       clearTimeout(timer);
     };

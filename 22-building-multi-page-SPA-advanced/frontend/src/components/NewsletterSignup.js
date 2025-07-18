@@ -15,6 +15,7 @@ function NewsletterSignup() {
         }
     }, [data, state])
 
+    // ? fetcher.Form can submit to any route action
     return (
         <fetcher.Form method="post" action="/newsletter" className={classes.newsletter}>
             <input

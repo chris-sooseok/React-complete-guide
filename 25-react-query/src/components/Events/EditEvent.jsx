@@ -1,12 +1,8 @@
-import {Link, redirect, useLoaderData, useNavigate, useParams, useSubmit, useNavigation} from 'react-router-dom';
-
-
+import {Link, redirect, useNavigate, useParams, useSubmit, useNavigation} from 'react-router-dom';
 import Modal from '../UI/Modal.jsx';
 import EventForm from './EventForm.jsx';
-import {useMutation, useQuery} from "@tanstack/react-query";
+import {useQuery} from "@tanstack/react-query";
 import {fetchEvent, updateEvent, queryClient} from "../../util/http.js";
-import LoadingIndicator from "../UI/LoadingIndicator.jsx";
-import ErrorBlock from "../UI/ErrorBlock.jsx";
 
 export default function EditEvent() {
     const navigate = useNavigate();
@@ -108,19 +104,19 @@ export default function EditEvent() {
     }
 }
 
-    export async function loader({params}) {
-        // ? even without useQuery queryClient has fetch function for which can be used to fetch data
-        return queryClient.fetchQuery({
-            queryKey: ['events', params.id],
-            queryFn: ({signal}) => fetchEvent({signal, id: params.id}),
-        });
-    }
+export async function loader({params}) {
+    // ? even without useQuery queryClient has fetch function for which can be used to fetch data
+    return queryClient.fetchQuery({
+        queryKey: ['events', params.id],
+        queryFn: ({signal}) => fetchEvent({signal, id: params.id}),
+    });
+}
 
-    export async function action({request, params}) {
-        // provided by React Router to get data to submit
-        const formData = await request.formData();
-        const updatedEventData = Object.fromEntries(formData);
-        await updateEvent({id: params.id, event: updatedEventData});
-        await queryClient.invalidateQueries(['events']);
-        return redirect('../');
-    }
+export async function action({request, params}) {
+    // provided by React Router to get data to submit
+    const formData = await request.formData();
+    const updatedEventData = Object.fromEntries(formData);
+    await updateEvent({id: params.id, event: updatedEventData});
+    await queryClient.invalidateQueries(['events']);
+    return redirect('../');
+}

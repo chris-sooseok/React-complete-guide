@@ -1,14 +1,13 @@
 import { Suspense } from 'react';
-import {
-    useRouteLoaderData,
-    redirect,
-    Await,
-} from 'react-router-dom';
+import { useRouteLoaderData, redirect, Await } from 'react-router-dom';
 
 import EventItem from '../components/EventItem';
 import EventsList from '../components/EventsList';
 
 function EventDetailPage() {
+
+    console.log("EventDetailPage");
+
     const { event, events } = useRouteLoaderData('event-detail');
 
     return (
@@ -60,9 +59,8 @@ async function loadEvents() {
     }
 }
 
-export async function loader({ request, params }) {
+export async function eventDetailLoader({ request, params }) {
     const id = params.eventId;
-
     return {
         // ! await here ensures that the data is loaded before rendering the page
         event: await loadEvent(id),
@@ -70,16 +68,21 @@ export async function loader({ request, params }) {
     };
 }
 
-export async function action({ params, request }) {
+// * action function receives params and request object that is used when form is submitted
+export async function deleteEventAction({ params, request }) {
     const eventId = params.eventId;
-    const response = await fetch('http://localhost:8080/events/' + eventId, {
-        method: request.method,
-    });
-
-    if (!response.ok) {
-        throw new Response(JSON.stringify({ message: 'Could not delete event.' }), {
-            status: 500,
+    // ! request.method contains delete in this case
+    // * if needed, you can define various actions for each method
+    if (request.method === 'DELETE') {
+        const response = await fetch('http://localhost:8080/events/' + eventId, {
+            method: request.method,
         });
+        if (!response.ok) {
+            throw new Response(JSON.stringify({ message: 'Could not delete event.' }), {
+                status: 500,
+            });
+        }
     }
+
     return redirect('/events');
 }

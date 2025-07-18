@@ -1,6 +1,6 @@
 import { useState } from "react";
 
-export default function Player() {
+export default function Player2() {
 
   const [enteredPlayerName, setEnteredPlayerName] = useState("");
   const [submitted, setSubmitted] = useState(false);
@@ -14,6 +14,8 @@ export default function Player() {
   function handleClick() {
     setSubmitted(true);
   }
+
+  console.log("rendered..");
 
   return (
     <section id="player">

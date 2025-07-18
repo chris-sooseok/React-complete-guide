@@ -6,14 +6,14 @@ import Examples from "./components/Examples.jsx";
 function App() {
   
   return (
-    // Fragment allows to remove unnecessary div wrapper
-    <Fragment>
+    // ? Fragment allows to remove unnecessary div wrapper
+    <>
       <Header></Header>
        <main>
         <CoreConcepts />
         <Examples />
       </main>
-    </Fragment>
+    </>
   );
 }
 

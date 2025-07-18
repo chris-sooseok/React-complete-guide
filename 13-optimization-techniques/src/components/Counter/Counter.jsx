@@ -19,14 +19,13 @@ function isPrime(number) {
       return false;
     }
   }
-
   return true;
 }
 
 const Counter = memo(function Counter({ initialCount }) {
   log("<Counter /> rendered", 1);
 
-  // useMemo will only execute the function only when dependency changes
+  // * useMemo will only execute the function only when dependency changes
   const initialCountIsPrime = useMemo(() => isPrime(initialCount), [initialCount]);
 
   const [counter, setCounter] = useState(initialCount);

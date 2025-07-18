@@ -5,16 +5,17 @@ import Section from "./Section";
 import Tabs from "./Tabs";
 
 export default function Examples() {
-  /* Hooks: useState
-    Only call hooks inside of component function
-    Only call hooks on the top level */
+    // ? Hooks: useState
+    // ? Only call hooks inside of component function
+    // ? Only call hooks on the top level
   const [selectedTopic, setSelectedTopic] = useState();
 
   function handleSelect(selectedButton) {
-    // selectedButton => 'components', 'jsx', 'props', 'state'
+    // ? selectedButton => 'components', 'jsx', 'props', 'state'
     setSelectedTopic(selectedButton);
   }
 
+  // ? tabContent automatically get updated depending on which tab topic is selected
   let tabContant = <p>Please select a topic</p>;
 
   if (selectedTopic) {

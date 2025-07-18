@@ -5,16 +5,9 @@ import {useQuery} from "@tanstack/react-query";
 import {fetchEvents} from '../../util/http.js'
 
 export default function NewEventsSection() {
-    // ! also have to wrap Provider to allow access
-    // ? send http request which you have to implement and assign
-    // ? Then, tanstack manages data, errors, caching & many more
-    // ? React Query caches data based on given key when fetched data
-    // ? request is still made to check if update is needed
     const {data, isPending, isError, error} = useQuery({
         // ? key used to help caching
         queryKey: ['events', {max: 3}],
-        // ! useQuery by default sends default data to query function
-        // ? queryFn gets queryKey as input
         queryFn: ({signal, queryKey}) => fetchEvents({signal, ...queryKey[1]}),
         // * staleTime controls behind-the-scene request term
         staleTime: 5000,

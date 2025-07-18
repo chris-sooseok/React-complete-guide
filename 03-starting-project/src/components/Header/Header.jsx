@@ -9,6 +9,7 @@ function genRandomInt(max) {
 
 // with default alias is allowed
 export default function Header() {
+    // ! randomly assign one of variables from the list
     const description = reactDescription[genRandomInt(2)];
     return (
       <header>

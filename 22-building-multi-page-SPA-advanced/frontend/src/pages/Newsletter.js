@@ -2,6 +2,9 @@ import NewsletterSignup from '../components/NewsletterSignup';
 import PageContent from '../components/PageContent';
 
 function NewsletterPage() {
+
+  console.log("NewsletterPage");
+  
   return (
     <PageContent title="Join our awesome newsletter!">
       <NewsletterSignup />
@@ -11,7 +14,7 @@ function NewsletterPage() {
 
 export default NewsletterPage;
 
-export async function action({ request }) {
+export async function newsletterAction({ request }) {
   const data = await request.formData();
   const email = data.get('email');
 

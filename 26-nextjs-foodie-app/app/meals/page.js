@@ -10,7 +10,7 @@ export const metadata = {
 };
 
 async function Meals() {
-    // ! nextJS performs caching
+    // ! executed on the server side to populate data
     const meals = await getMeals();
     return <MealsGrid meals={meals}/>
 

@@ -51,6 +51,7 @@ export async function createNewEvent(eventData) {
 }
 
 export async function fetchSelectableImages({ signal }) {
+    // ! fetch takes abortSingal
     const response = await fetch(`http://localhost:3000/events/images`, { signal });
 
     if (!response.ok) {
@@ -66,6 +67,7 @@ export async function fetchSelectableImages({ signal }) {
 }
 
 export async function fetchEvent({ signal, id }) {
+
     const response = await fetch(`http://localhost:3000/events/${id}`, { signal });
 
     if (!response.ok) {

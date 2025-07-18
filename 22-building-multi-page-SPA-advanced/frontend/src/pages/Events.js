@@ -4,6 +4,8 @@ import {Suspense} from "react";
 
 function EventsPage() {
 
+    console.log("EventsPage");
+
     const {events} = useLoaderData();
 
     // ? Suspense renders a waiting status component

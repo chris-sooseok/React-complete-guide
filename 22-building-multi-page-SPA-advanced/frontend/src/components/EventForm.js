@@ -14,7 +14,8 @@ function EventForm({method, event}) {
         navigate('..');
     }
 
-    // ? Form data is passed to the action function in NewEvent page in which will use the data to submit the form
+    // ! once the form is submitted, Router intercepts and calls the action function based on the path
+    // ? regular form submits the data to the current route's action and its data is available through useActionData()
     return (
         <Form method={method} className={classes.form}>
             {data && data.errors && <ul>
@@ -72,7 +73,7 @@ function EventForm({method, event}) {
 
 export default EventForm;
 
-export async function action({ request, params }) {
+export async function manipulateEventAction({ request, params }) {
     const method = request.method;
     const data = await request.formData();
 
@@ -99,6 +100,7 @@ export async function action({ request, params }) {
     });
 
     if (response.status === 422) {
+        // ! this becomes available via useActionData()
         return response;
     }
 

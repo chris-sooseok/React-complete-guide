@@ -1,6 +1,5 @@
 import {Link, Outlet, useNavigate, useParams} from 'react-router-dom';
 import Header from '../Header.jsx';
-
 import {useMutation, useQuery} from "@tanstack/react-query";
 import {deleteEvent, fetchEvent, queryClient} from "../../util/http.js";
 import ErrorBlock from "../UI/ErrorBlock.jsx";
@@ -14,10 +13,13 @@ export default function EventDetails() {
     const params = useParams();
     const navigate = useNavigate();
 
+    // * mutate contains the function action
     const {mutate, isPending: isPendingDelete, isError: isErrorDeleting, error: deleteError} = useMutation({
-        mutationFn: deleteEvent, // ? refetchType postpone immediate invalidation of queries,
-        // ? but schedule invalidation when they are needed
-        // ? This behavior is used to prevent current detail event to be rendered
+        mutationFn: deleteEvent,
+        // * invalidateQueries marks events stale
+        // * pages using events data will refresh
+        // * but with using refetchType none, the refresh happens only when events data is needed
+        // ? since you are already navigating to events page, no need to refetch events immediately
         onSuccess: async () => {
             await queryClient.invalidateQueries({
                 queryKey: ['events'], refetchType: 'none'
@@ -99,12 +101,13 @@ export default function EventDetails() {
             </div>
             {isErrorDeleting && <ErrorBlock title="Failed to delete"></ErrorBlock>}
         </Modal>)}
-        <Outlet/>
         <Header>
             <Link to="/events" className="nav-item">
                 View all Events
             </Link>
         </Header>
+        {/* Outlet doesn't render anything here */}
+        <Outlet/>
         <article id="event-details">
             {content}
         </article>

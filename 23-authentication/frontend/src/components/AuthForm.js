@@ -4,8 +4,7 @@ import classes from './AuthForm.module.css';
 
 function AuthForm() {
     const [searchParams, setSearchParams] = useSearchParams();
-    const isLogin = searchParams.get('mode') === 'login';
-
+    const isLoginMode = searchParams.get('mode') === 'login';
     // ? useActionData returns data that was returned by the submission of this form
     const data = useActionData();
     // ? useNavigation returns values that indicate current states of form submitted
@@ -15,7 +14,7 @@ function AuthForm() {
     return (
         <>
             <Form method="post" className={classes.form}>
-                <h1>{isLogin ? 'Log in' : 'Create a new user'}</h1>
+                <h1>{isLoginMode ? 'Log in' : 'Create a new user'}</h1>
                 {data && data.errors && <ul>
                     {Object.values(data.errors).map((err) => (<li key={err}>{err}</li>))}
                 </ul>}
@@ -29,8 +28,8 @@ function AuthForm() {
                     <input id="password" type="password" name="password" required/>
                 </p>
                 <div className={classes.actions}>
-                    <Link to={`?mode=${isLogin ? 'signup' : 'login'}`}>
-                        {isLogin ? 'Create new user' : 'Login'}
+                    <Link to={`?mode=${isLoginMode ? 'signup' : 'login'}`}>
+                        {isLoginMode ? 'Create new user' : 'Login'}
                     </Link>
                     <button disabled={isSubmitting}>{isSubmitting ? 'Submitting...' : 'Save '}</button>
                 </div>

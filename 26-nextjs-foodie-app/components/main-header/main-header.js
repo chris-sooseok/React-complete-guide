@@ -1,7 +1,5 @@
 import Link from "next/link";
 import logoImg from "@/assets/logo.png"
-
-// ? style to be applied scoped within files in which it is included
 import classes from './main-header.module.css'
 import Image from "next/image";
 import MainHeaderBackground from "@/components/main-header/main-header-background";

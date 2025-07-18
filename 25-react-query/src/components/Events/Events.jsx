@@ -8,12 +8,12 @@ import NewEventsSection from './NewEventsSection.jsx';
 export default function Events() {
   return (
     <>
-      <Outlet />
       <Header>
         <Link to="/events/new" className="button">
           New Event
         </Link>
       </Header>
+      <Outlet />
       <main>
         <EventsIntroSection />
         <NewEventsSection />

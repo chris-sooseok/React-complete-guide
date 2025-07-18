@@ -17,7 +17,7 @@ const INITIAL_GAME_BOARD = [
 ];
 
 function deriveActivePlayer(gameTurns) {
-  // based on the gameTurns value, determine which player is active
+  // ? based on the gameTurns value, determine which player is active
   let currentPlayer = "X";
   if (gameTurns.length > 0 && gameTurns[0].player === "X") {
     currentPlayer = "O";
@@ -26,9 +26,12 @@ function deriveActivePlayer(gameTurns) {
 }
 
 function deriveGameBoard(gameTurns) {
-  // based on the gameTurns value, derive the gameBoard
+  // ? based on the gameTurns value, derive the gameBoard
+
+  // ? copying gameboard
   let gameBoard = [...INITIAL_GAME_BOARD.map((array) => [...array])];
   for (const gameTurn of gameTurns) {
+    // ? player (O or X)
     const { square, player } = gameTurn;
     const { row, col } = square;
     gameBoard[row][col] = player;

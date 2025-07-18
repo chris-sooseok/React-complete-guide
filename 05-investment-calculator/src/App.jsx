@@ -27,7 +27,9 @@ function App() {
   return (
     <>
       <Header />
+
       <UserInput userInput={userInput} onChange={handleChange} />
+
       {!inputIsValid && <p> Please Enter Valid Duration</p>}
       {inputIsValid && <Results userInput={userInput} /> }
     </>

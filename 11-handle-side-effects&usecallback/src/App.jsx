@@ -1,5 +1,4 @@
 import { useRef, useState, useEffect, useCallback } from "react";
-
 import Places from "./components/Places.jsx";
 import { AVAILABLE_PLACES } from "./data.js";
 import Modal from "./components/Modal.jsx";
@@ -29,7 +28,7 @@ function App() {
   //   setPickedPlaces(storedPlaces);
   // });
 
-  // useEffect schedules the function to execute after all other components execute
+  // ? useEffect schedules the function to execute after all other components execute
   useEffect(
     () => {
       navigator.geolocation.getCurrentPosition((position) => {
@@ -38,16 +37,10 @@ function App() {
           position.coords.latitude,
           position.coords.longitude
         );
-
-        console.log(sortedPlaces);
-
         setAvailablePlaces(sortedPlaces);
       });
     },
-    [
-      // dependencies. This doesn't have one. If provided, the function re-executes only when the values of dependecies change
-      // if omitted, it won't run again
-    ]
+    []
   );
 
   function handleStartRemovePlace(id) {
@@ -69,6 +62,7 @@ function App() {
     });
 
     const storedIds = JSON.parse(localStorage.getItem("selectedPlaces")) || [];
+    // * if not exist, store the id
     if (storedIds.indexOf(id) === -1) {
       localStorage.setItem(
         "selectedPlaces",
@@ -77,8 +71,8 @@ function App() {
     }
   }
 
-  // useCallback prevents recreation of the function, thus, preventing potential infinite loop since this
-  // object is passed to useEffect inside DeleteConfirmation
+  // * useCallback prevents recreation of the function, thus, preventing potential infinite loop since this
+  // * object is passed to useEffect inside DeleteConfirmation
   const handleRemovePlace = useCallback(function handleRemovePlace() {
     setPickedPlaces((prevPickedPlaces) =>
       prevPickedPlaces.filter((place) => place.id !== selectedPlace.current)
@@ -90,9 +84,7 @@ function App() {
       "selectedPlaces",
       JSON.stringify(storedIds.filter((id) => id !== selectedPlace.current))
     );
-  }, [
-    // just like useEffect, use the dependencies in the same way
-  ]);
+  }, []);
 
   return (
     <>
@@ -102,7 +94,6 @@ function App() {
           onConfirm={handleRemovePlace}
         />
       </Modal>
-
       <header>
         <img src={logoImg} alt="Stylized globe" />
         <h1>PlacePicker</h1>

@@ -1,6 +1,6 @@
 import { useState } from "react";
 import { styled } from "styled-components";
-import Input from "./Input";
+import CustomInput from "./Input";
 import Button from "./Button";
 
 const ControlContainer = styled.div`
@@ -34,18 +34,18 @@ export default function AuthInputs() {
     <div id="auth-inputs">
       <ControlContainer>
         <p>
-          <Input
+          <CustomInput
             label="Email"
-            invalid={emailNotValid}
+            $invalid={emailNotValid}
             type="email"
             // className={emailNotValid ? "invalid" : undefined}
             onChange={(event) => handleInputChange("email", event.target.value)}
           />
         </p>
         <p>
-          <Input
-            label="Password"
-            invalid={passwordNotValid}
+          <CustomInput
+              label="Password"
+            $invalid={passwordNotValid}
             // className={passwordNotValid ? "invalid" : undefined
             type="password"
             onChange={(event) =>

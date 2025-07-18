@@ -2,9 +2,14 @@ import classes from './page.module.css'
 import Image from "next/image";
 import {getMeal} from "@/lib/meals";
 import {notFound} from "next/navigation";
+import sql from 'better-sqlite3'
 
 export async function generateMetadata({ params }) {
     const meal = getMeal(params.mealSlug);
+
+    // const db = sql('meals.db');
+    // await new Promise((resolve) => setTimeout(resolve, 2000));
+    // const meal = db.prepare("SELECT * FROM meals").all();
 
     if (!meal) {
         notFound();

@@ -26,7 +26,6 @@ function App() {
     );
   }
 
-
   // ? while rendering the sidebar, each project will be passed an id 
   function handleSelectProject(projectId) {
       setProjectsState((prevState) => {
@@ -42,6 +41,7 @@ function App() {
       }
     );
   }
+
 
   function handleCancelAddProject() {
       setProjectsState((prevState) => {
@@ -84,7 +84,7 @@ function App() {
       tasks={projectsState.tasks}
     />
   );
-  // Based on projectState, display different content either new project form, or no project exist page.
+  // ? Based on projectState, display different content either new project form, or no project exist page.
   if (projectsState.selectedProjectId === null) {
     content = ( <NewProject onAdd={handleAddProject} onCancel={handleCancelAddProject} />);
   } else if (projectsState.selectedProjectId === undefined) {

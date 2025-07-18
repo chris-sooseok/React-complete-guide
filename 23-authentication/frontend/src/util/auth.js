@@ -9,18 +9,14 @@ export function getTokenDuration() {
 }
 
 export function getAuthToken() {
-
     const token = localStorage.getItem('token');
-
     if (!token) {
         return null;
     }
     const expirationDate = getTokenDuration();
-
     if (expirationDate < 0) {
         return 'EXPIRED';
     }
-
     return token
 }
 
@@ -30,7 +26,6 @@ export function tokenLoader() {
 
 export function checkAuthLoader() {
     const token = getAuthToken();
-
     if (!token) {
         return redirect('/auth');
     }

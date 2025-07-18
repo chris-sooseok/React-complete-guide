@@ -9,7 +9,6 @@ export default function NewProject({ onAdd, onCancel }) {
   const description = useRef();
   const dueDate = useRef();
 
-
   function handleSave() {
     const enteredTitle = title.current.value;
     const enteredDescription = description.current.value;
@@ -20,10 +19,10 @@ export default function NewProject({ onAdd, onCancel }) {
       enteredDescription.trim() === "" ||
       enteredDueDate.trim() === ""
     ) {
-      modal.current.open ();
+      modal.current.open();
     }
 
-    // onAdd will handle projectState update
+    // ? onAdd will handle projectState update
     onAdd({
         title: enteredTitle,
         description: enteredDescription,

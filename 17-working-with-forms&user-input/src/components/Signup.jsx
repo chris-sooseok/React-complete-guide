@@ -9,6 +9,7 @@ import {useState} from "react";
 export default function Signup() {
 
     const [passwordAreNotEqual, setPasswordAreNotEqual] = useState(false);
+
     function handleSubmit(event) {
         event.preventDefault();
 
@@ -23,7 +24,6 @@ export default function Signup() {
             setPasswordAreNotEqual(true);
         }
 
-        console.log(data)
         event.target.reset();
     }
   return (
