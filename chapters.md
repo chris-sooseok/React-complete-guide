@@ -210,9 +210,6 @@ node app.js
         - extract and validate input when user submits
         - easy to reset data
 
-
-# Chapter 18: handling forms data via form actions - Signup Form
-
 # Chapter 18: handling forms data via form actions - Share Opinion App
 
 ### The key take-away in Chapter 18
